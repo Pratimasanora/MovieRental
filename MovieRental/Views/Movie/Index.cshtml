@@ -1,0 +1,27 @@
+﻿@model IEnumerable<MovieRental.Models.Movie>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div style="background-color: white">
+    <h2>Index</h2>
+</div>
+
+<table class="table table-bordered table-hover" style="background-color: white">
+    <tr>
+        <th>Movie Name</th>
+        <th>Genre Type</th>
+        <th>Delete</th>
+    </tr>
+
+    @foreach (var m in Model)
+    {
+        <tr>
+            <td>@Html.ActionLink(m.MovieName, "Details", new { m.Id })</td>
+            <td>@m.Genre.Name</td>
+            <td>@Html.ActionLink("Delete", "Delete", new { m.Id })</td>
+        </tr>
+    }
+</table>
+
+<button class="btn btn-primary">@Html.ActionLink("Add New Movie", "MovieForm", null, new { @style = "color: white; text-decoration:none" })</button>

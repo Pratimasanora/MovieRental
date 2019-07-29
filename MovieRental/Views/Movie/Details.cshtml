@@ -1,0 +1,37 @@
+﻿@model MovieRental.Models.Movie
+@{
+    ViewBag.Title = "Details";
+}
+
+<div style="background-color: white">
+    <h2>Movie Details</h2>
+</div>
+
+<table class="table table-bordered table-hover" style="background-color: white">
+    <tr>
+        <th>Id</th>
+        <th>Movie Name</th>
+        <th>No In Stocks</th>
+        <th>Release Date</th>
+        <th>Added Date</th>
+        <th>Genre Type</th>
+    </tr>
+    <tr>
+        <td>@Model.Id</td>
+
+        <td>@Model.MovieName</td>
+
+        <td>@Model.NoInStocks</td>
+
+        <td>@Model.ReleaseDate.ToLongDateString()</td>
+
+        <td>@Model.AddedDate.ToLongDateString()</td>
+
+        <td>@Model.Genre.Name</td>
+    </tr>
+
+</table>
+
+<button class="btn btn-primary">@Html.ActionLink("Update Details", "MovieForm", Model, new { @style = "color: white; text-decoration:none" })</button>
+<button class="btn btn-primary" type="button">@Html.ActionLink("Back", "Index", null, new { @style = "color: white; text-decoration:none" })</button>
+

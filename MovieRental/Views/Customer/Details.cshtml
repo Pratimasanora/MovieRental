@@ -1,0 +1,51 @@
+﻿@model MovieRental.Models.Customer
+@{
+    ViewBag.Title = "Details";
+}
+
+<div style="background-color: white">
+    <h2>Customer Details</h2>
+</div>
+    <table class="table table-bordered table-hover" style="background-color: white">
+        <tr>
+            <th>Id</th>
+            <th>Customer Name</th>
+            <th>IsSubscribeTypeNewsLetter</th>
+            <th>Membership Id</th>
+            <th>Membership Type_Id</th>
+            <th>DoB</th>
+        </tr>
+        <tr>
+            <td>@Model.Id</td>
+
+            <td>@Model.Name</td>
+
+            <td>@Model.IsSubscribeTypeNewsLetter</td>
+
+            <td>@Model.MembershipTypeId</td>
+
+            <td>@Model.MembershipType.Name</td>
+
+            <td>@Model.Date.ToLongDateString()</td>
+
+        </tr>
+    </table>
+
+@*<div style="background-color:black">
+    <h3 style="color: white">
+        <label>Customer Id : @Model.Id</label>
+        <br />
+        <label>Customer Name : @Model.Name</label>
+        <br />
+        <label>Subscribe Type News Letter : @Model.IsSubscribeTypeNewsLetter</label>
+        <br />
+        <label>Membership Type Id : @Model.MembershipTypeId</label>
+        <br />
+        <label>Membership Type :  @Model.MembershipType.Name</label>
+        <br />
+        <label>Date of Birth : @Model.Date.ToLongDateString()</label>
+    </h3>
+</div>*@
+
+<button class="btn btn-default">@Html.ActionLink("Update Details", "CustForm", Model)</button>
+<button class="btn btn-primary" type="button">@Html.ActionLink("Back", "Index", null, new { @style = "color: white; text-decoration:none" })</button>
